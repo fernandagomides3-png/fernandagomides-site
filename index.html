@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernanda Gomides Carvalho</title>
+<meta name="description" content="Fernanda Gomides Carvalho — mestranda em Engenharia de Produção na UFG. Pesquisa sobre detecção de passageiros no transporte público via smartphones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f5c4d'/><text x='32' y='43' font-family='Georgia' font-size='30' fill='white' text-anchor='middle'>FG</text></svg>">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --text: #1d2321;
+    --muted: #5b6662;
+    --line: #e5e1d8;
+    --accent: #0f5c4d;
+    --accent-soft: #e3efe9;
+    --warm: #c8693c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111614;
+      --surface: #182019;
+      --text: #e9ece9;
+      --muted: #a2aea9;
+      --line: #2a3430;
+      --accent: #6cc4ab;
+      --accent-soft: #1d2e28;
+      --warm: #e5935f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 Inter, system-ui, sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+  nav .brand { font-family: Fraunces, Georgia, serif; font-weight: 600; text-decoration: none; color: var(--text); }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; font-size: 14px; }
+  nav ul a { color: var(--muted); text-decoration: none; }
+  nav ul a:hover { color: var(--accent); }
+  @media (max-width: 640px) { nav ul { display: none; } }
+
+  header.hero { padding: 96px 0 72px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 600; color: var(--warm); margin: 0 0 16px; }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; line-height: 1.15; margin: 0; }
+  h1 { font-size: clamp(40px, 7vw, 68px); letter-spacing: -.01em; }
+  .lead { font-size: clamp(18px, 2.2vw, 21px); color: var(--muted); max-width: 640px; margin: 24px 0 32px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { background: var(--accent-soft); color: var(--accent); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 500; }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: clamp(28px, 4vw, 36px); margin-bottom: 28px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; gap: 24px; } }
+  p { margin: 0 0 16px; }
+
+  .facts { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
+  .fact { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .fact:last-child { border-bottom: 0; }
+  .fact dt { color: var(--muted); font-size: 13px; padding-top: 2px; }
+  .fact dd { margin: 0; font-weight: 500; }
+
+  .research { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 32px; }
+  .signals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0 8px; }
+  @media (max-width: 640px) { .signals { grid-template-columns: 1fr; } }
+  .signal { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: var(--bg); }
+  .signal strong { display: block; font-family: Fraunces, Georgia, serif; font-size: 18px; margin-bottom: 4px; }
+  .signal span { color: var(--muted); font-size: 14px; }
+  .goals { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; transition: transform .15s, border-color .15s; }
+  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .card .kind { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--warm); font-weight: 600; margin-bottom: 10px; }
+  .card h3 { font-size: 21px; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: 15px; flex: 1; }
+  .card .stack { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+  .card a.more { font-weight: 600; font-size: 14px; text-decoration: none; }
+  .card a.more:hover { text-decoration: underline; }
+
+  .interests { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (max-width: 640px) { .interests { grid-template-columns: 1fr; } }
+  .interest { display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+  .interest .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 8px; }
+  .interest h3 { font-family: Inter, sans-serif; font-size: 16px; margin-bottom: 4px; }
+  .interest p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  .contact { text-align: center; }
+  .contact p { color: var(--muted); max-width: 520px; margin: 0 auto 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: var(--bg); padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+  .btn:hover { opacity: .9; }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Fernanda Gomides</a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#pesquisa">Pesquisa</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#interesses">Interesses</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Engenharia de Produção · UFG</p>
+    <h1>Fernanda Gomides<br>Carvalho</h1>
+    <p class="lead">Mestranda em Engenharia de Produção na Universidade Federal de Goiás. Pesquisa como sinais de smartphones podem medir a lotação e os deslocamentos no transporte público, e cria ferramentas web para problemas de engenharia e de finanças.</p>
+    <div class="tags">
+      <span class="tag">Transporte público</span>
+      <span class="tag">Mobilidade urbana</span>
+      <span class="tag">Gestão da qualidade</span>
+      <span class="tag">Segurança do trabalho</span>
+      <span class="tag">Desenvolvimento web</span>
+    </div>
+  </div>
+</header>
+
+<section id="sobre">
+  <div class="wrap grid-2">
+    <div>
+      <h2>Sobre</h2>
+      <p>Sou engenheira e mestranda no Programa de Pós-Graduação em Engenharia de Produção (PPGEP) da UFG, em Goiânia. Meu trabalho junta métodos quantitativos e tecnologia para entender melhor sistemas reais: ônibus, canteiros de obra e processos produtivos.</p>
+      <p>Fora da pesquisa, gosto de transformar tarefas repetitivas em ferramentas simples. Assim nasceram um visualizador de plantas DWG que calcula áreas direto no navegador e uma calculadora que compara a Selic com ações da B3.</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>Programa</dt><dd>Mestrado em Engenharia de Produção</dd></div>
+      <div class="fact"><dt>Instituição</dt><dd>Universidade Federal de Goiás (UFG)</dd></div>
+      <div class="fact"><dt>Ingresso</dt><dd>2026</dd></div>
+      <div class="fact"><dt>Orientação</dt><dd>Profa. Tatiana Gondim do Amaral</dd></div>
+      <div class="fact"><dt>Coorientação</dt><dd>Prof. Marcos Paulino Roriz Junior</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="pesquisa">
+  <div class="wrap">
+    <h2>Pesquisa</h2>
+    <div class="research">
+      <p class="eyebrow">Linha de investigação</p>
+      <h3 style="font-size:24px;margin-bottom:14px">Detecção de passageiros no transporte público por meio de smartphones</h3>
+      <p>Quase todo passageiro leva um celular, e esse celular emite sinais sem fio o tempo todo. Minha pesquisa revisa e analisa métodos que usam esses sinais para estimar quantas pessoas estão em um ônibus e de onde para onde elas viajam. Essas informações costumam ser caras de levantar com pesquisas e contagens manuais.</p>
+      <div class="signals">
+        <div class="signal"><strong>Wi-Fi</strong><span>Probe requests, endereços MAC e intensidade do sinal (RSSI) captados por sniffers embarcados.</span></div>
+        <div class="signal"><strong>Bluetooth</strong><span>Detecção de dispositivos próximos para estimar presença e permanência a bordo.</span></div>
+        <div class="signal"><strong>GPS</strong><span>Posição e velocidade do veículo, que ligam cada detecção a paradas e trechos da linha.</span></div>
+      </div>
+      <p style="margin-top:20px">A análise compara as técnicas de classificação e contagem (limiares, clustering, SVM, Random Forest), os experimentos em linhas reais e os desafios práticos, como a randomização de MAC e os passageiros sem smartphone.</p>
+      <div class="goals">
+        <span class="tag">Lotação de veículos</span>
+        <span class="tag">Matriz origem/destino</span>
+        <span class="tag">Aprendizado de máquina</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <h2>Projetos</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="kind">Engenharia · CAD</div>
+        <h3>Visualizador DWG</h3>
+        <p>Abre arquivos DWG e DXF no navegador, com zoom e pan, e calcula a área e o perímetro dos polígonos fechados. Associa o nome de cada ambiente e exporta para o Excel. Nenhum arquivo sai do computador.</p>
+        <div class="stack">JavaScript · WebAssembly (LibreDWG) · Vercel</div>
+        <a class="more" href="https://github.com/fernandagomides3-png/projetos-dwg" target="_blank" rel="noopener">Ver no GitHub →</a>
+      </article>
+      <article class="card">
+        <div class="kind">Finanças</div>
+        <h3>Selic vs Bolsa</h3>
+        <p>Compara o rendimento da Selic com o de até 5 ações da B3 em janelas de 1 a 10 anos, com aporte inicial e mensal. Calcula o IR e mostra a evolução em gráfico.</p>
+        <div class="stack">JavaScript · Chart.js · API do Banco Central · Vercel</div>
+        <a class="more" href="https://github.com/fernandagomides3-png/calculadora-selic-bolsa" target="_blank" rel="noopener">Ver no GitHub →</a>
+      </article>
+      <article class="card">
+        <div class="kind">Este site</div>
+        <h3>fernandagomides-site</h3>
+        <p>Página pessoal estática, feita em HTML e CSS puros e hospedada na Vercel. Tem tema claro e escuro automático.</p>
+        <div class="stack">HTML · CSS · Vercel</div>
+        <a class="more" href="https://github.com/fernandagomides3-png/fernandagomides-site" target="_blank" rel="noopener">Ver no GitHub →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="interesses">
+  <div class="wrap">
+    <h2>Interesses</h2>
+    <div class="interests">
+      <div class="interest"><span class="dot"></span><div><h3>Mobilidade e transporte público</h3><p>Dados de lotação e de origem/destino para planejar linhas melhores.</p></div></div>
+      <div class="interest"><span class="dot"></span><div><h3>Engenharia da qualidade</h3><p>Ferramentas da qualidade e melhoria contínua de processos.</p></div></div>
+      <div class="interest"><span class="dot"></span><div><h3>Segurança e saúde no trabalho</h3><p>Uso do método A3 para resolver problemas de SST.</p></div></div>
+      <div class="interest"><span class="dot"></span><div><h3>Gestão da construção</h3><p>Levantamento de áreas, vistorias e a gestão de obras e empreendimentos.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <div class="wrap">
+    <h2>Vamos conversar</h2>
+    <p>Aberta a parcerias de pesquisa, troca de artigos sobre mobilidade urbana e projetos de ferramentas para engenharia.</p>
+    <a class="btn" href="https://github.com/fernandagomides3-png" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      github.com/fernandagomides3-png
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Fernanda Gomides Carvalho · Goiânia, GO</div>
+</footer>
+
+</body>
+</html>
